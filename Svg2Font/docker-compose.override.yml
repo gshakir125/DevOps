@@ -1,0 +1,11 @@
+version: '3.4'
+services:
+  svg2font.api:
+    volumes:
+      - 'C:/Users/afarooq/source/repos/svg2font/Svg2Font.Api/wwwroot:/usr/app/wwwroot/'
+    environment:
+      - 'ASPNETCORE_ENVIRONMENT=Sandbox'
+      - 'ConnectionString=Server=mssql,1433;Database=svg2fontdb;User Id=sa;Password=${DB_PASSWORD};MultipleActiveResultSets=true;'
+  # svg2font.generator:
+  #   volumes:
+  #     - '.././Svg2Font.Api/wwwroot:/usr/src/Svg2Font.Api/wwwroot/'

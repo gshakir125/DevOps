@@ -1,0 +1,25 @@
+version: '3.4'
+services:
+  svg2font.api:
+    image: brickclaycontainerregistry.azurecr.io/svg2font.api:latest
+    container_name: svg2font_api
+    ports:
+      - '5000:5000'
+    # depends_on:
+    #   - mssql
+    restart: always 
+    networks:
+      - proxynet
+    # build: Svg2Font.Api
+  # svg2font.generator:
+  #   image: brickclaycontainerregistry.azurecr.io/svg2font.generator
+  #   container_name: svg2font_generator
+  #   ports:
+  #     - '3000:3000'
+  #   networks:
+  #     - proxynet
+    # build: Svg2Font.Generator
+networks:
+  proxynet:
+    external:
+      name: devops_default

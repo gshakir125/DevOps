@@ -1,0 +1,23 @@
+version: '3.4'
+services:
+  nginx:
+    image: 'nginx:alpine'
+    container_name: nginx
+    command:
+      - nginx
+      - '-g'
+      - daemon off;
+    ports:
+      - '80:80'
+      - '443:443'
+    restart: always 
+  mssql:
+    image: brickclaycontainerregistry.azurecr.io/mssql
+    container_name: mssql
+    ports:
+      - '1433:1433'
+    build: mssql
+    restart: always 
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Developer
