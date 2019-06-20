@@ -126,6 +126,7 @@ check_devops_changes(){
             git pull
          else
             echo "Dev Ops is up to date"
+            docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d nginx
          fi
       fi
   fi
