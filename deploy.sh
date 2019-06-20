@@ -12,6 +12,10 @@ set -e
 # ssh afarooq@13.75.70.241 export DEMO_VAR=Value asdf \; "$(<deploy.sh)"
 # sudo COMPOSE_OPTIONS="-e DEMO_VAR=$DEMO_VAR" docker-compose up some_server
 
+# Ip Table Fix
+# sudo modprobe ip_tables
+# sudo echo 'ip_tables' >> /etc/modules
+
 # cat >>~/.netrc <<EOF
 # machine https://afarooq@dev.azure.com/afarooq/Svg2Font/_git/Svg2Font.DevOps
 #        login $username
@@ -100,7 +104,7 @@ download_devops(){
     command cd $dir
     git remote add -t \* -f origin $devOpsRepo  
     git checkout master
-    docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d nginx
+    docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d
     if [ "$?" -ne 0 ]; then
       echo "Error in DevOps Up and Running !" 1>&2
       exit 1
@@ -126,7 +130,7 @@ check_devops_changes(){
             git pull
          else
             echo "Dev Ops is up to date"
-            docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d nginx
+            docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d
          fi
       fi
   fi

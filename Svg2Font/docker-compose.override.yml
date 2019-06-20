@@ -6,6 +6,9 @@ services:
     environment:
       - 'ASPNETCORE_ENVIRONMENT=Sandbox'
       - 'ConnectionString=Server=mssql,1433;Database=svg2fontdb;User Id=sa;Password=${DB_PASSWORD};MultipleActiveResultSets=true;'
+    build: 
+      context: ../../Svg2Font.Api/
+      dockerfile: ./Dockerfile.original
   # svg2font.generator:
   #   volumes:
   #     - '.././Svg2Font.Api/wwwroot:/usr/src/Svg2Font.Api/wwwroot/'

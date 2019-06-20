@@ -5,4 +5,4 @@ services:
       - '/usr/app/powerbiportal/wwwroot:/usr/app/wwwroot/'
     environment:
       - 'ASPNETCORE_ENVIRONMENT=Production'
-      - 'ConnectionString=Server=mssql,1433;Database=powerbiportaldb;User Id=sa;Password=P@kistan7861;MultipleActiveResultSets=true;'
+      - 'ConnectionString=Server=mssql,1433;Database=powerbiportaldb;User Id=sa;Password=${DB_PASSWORD};MultipleActiveResultSets=true;'
