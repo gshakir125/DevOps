@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# ssh afarooq@13.75.70.241 "envariable=Value bash -s" < deploy.sh argument
+# ssh afarooq@13.75.70.241 "envariable=Value bash -s" < deploy.sh 4 arguments
 # PowerShellpl Get-Content ./deploy.sh -Raw | ssh afarooq@52.184.15.199 'bash -s'
 # cd /drives/d/repos/new/DevOps
 # ./plink.exe afarooq@52.184.15.199 -batch -pw P@kistan7861 "bash -s" < deploy.sh "world"
@@ -18,16 +18,26 @@ set -e
 #        password $password
 # EOF
 
+if [[ $# -lt 4 ]] ; then
+    echo 'All arguments are not supplied'
+    exit 1
+fi
+
 environment=$1
 projectName=$2
 serviceName=$3
+devOpsRepo=$4
+dockerUrl=$5
 
-devOpsRepo="https://github.com/abdullahgb/DevOps.git"
-dockerRepo="brickclaycontainerregistry.azurecr.io/$serviceName:latest"
+dockerRepo="$dockerUrl/$serviceName:latest"
 
-echo "Envirnment: $environment"
-echo "Project:    $projectName"
-echo "Service:    $serviceName"
+echo " "
+echo "Envirnment:           $environment"
+echo "Project:              $projectName"
+echo "Service:              $serviceName"
+echo "DevOps Repository:    $devOpsRepo"
+echo "Docker Repository:    $serviceName"
+echo " "
 
 export COMPOSE_INTERACTIVE_NO_CLI=1
 devOpsDir="DevOps"
