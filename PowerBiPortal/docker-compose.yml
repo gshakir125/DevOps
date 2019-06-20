@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+  powerbiportal.api:
+    image: 'brickclaycontainerregistry.azurecr.io/powerbiportal.api:latest'
+    container_name: powerbiportal_api
+    ports:
+      - '5000:5000'
+    restart: always
+    networks:
+      - proxynet
+    volumes:
+      - 'C:/Users/afarooq/source/repos/PowerBiPortal.Api/wwwroot:/usr/app/wwwroot/'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Sandbox
+      - 'ConnectionString=Server=mssql,1433;Database=powerbiportaldb;User Id=sa;Password=${DB_PASSWORD};MultipleActiveResultSets=true;'
+networks:
+  proxynet:
+    external:
+      name: devops_default
