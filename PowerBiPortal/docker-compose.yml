@@ -4,7 +4,7 @@ services:
     image: 'brickclaycontainerregistry.azurecr.io/powerbiportal.api:latest'
     container_name: powerbiportal_api
     ports:
-      - '5000:5000'
+      - '5001:5000'
     restart: always
     networks:
       - proxynet
