@@ -36,7 +36,7 @@ echo "Envirnment:           $environment"
 echo "Project:              $projectName"
 echo "Service:              $serviceName"
 echo "DevOps Repository:    $devOpsRepo"
-echo "Docker Repository:    $serviceName"
+echo "Docker Repository:    $dockerUrl"
 echo " "
 
 export COMPOSE_INTERACTIVE_NO_CLI=1
