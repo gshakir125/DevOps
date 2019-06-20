@@ -142,7 +142,7 @@ if [[ $output != *"up to date"* ]]; then # Not up to date
       exit 1
     fi
 else
-  docker-compose -f docker-compose.yml -f docker-compose$env up -d $serviceName
+  docker-compose -f docker-compose.yml -f docker-compose.$env up -d $serviceName
 fi
 
 exit 0
