@@ -6,9 +6,9 @@
 !**/*.dockerignore
 !**/*.sh
 !**/*.yml
-nginx/**/**
+nginx/static/**
 !nginx/static/html/**
-!mssql/**
+Kohsaar/**/**
 plink.exe
 
 # etc...
