@@ -5,7 +5,7 @@ dropFile=$1
 dropDir=$2
 devOpsDir="DevOps"
 
-unzip /drop/$dropFile.zip -d /$devOpsDir/nginx/static/$dropDir
+unzip -o drop/$dropFile.zip -d $devOpsDir/nginx/static/$dropDir
 
 command cd $devOpsDir
 if [ -d .git ]; then
