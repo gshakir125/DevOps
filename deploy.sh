@@ -49,9 +49,9 @@ projectDir="$devOpsDir/$projectName"
 
 install_docker() {
     # Docker
-    sudo apt remove --yes docker docker-engine docker.io \
-    && sudo apt update \
+    command cd
     sudo apt update \
+    sudo apt -y dist-upgrade \
     && sudo apt --yes --no-install-recommends install \
     apt-transport-https \
     ca-certificates \
@@ -64,6 +64,7 @@ install_docker() {
     && sudo apt update \
     && sudo apt --yes --no-install-recommends install docker-ce \
     && sudo usermod --append --groups docker "$USER" \
+    && mkdir .docker \
     && sudo chown "$USER":"$USER" /home/"$USER"/.docker -R \
     && sudo chmod g+rwx "/home/$USER/.docker" -R \
     && sudo systemctl enable docker \
