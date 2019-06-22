@@ -2,10 +2,9 @@
 set -e
 
 dropFile=$1
-dropDir=$2
 devOpsDir="DevOps"
 
-unzip -o drop/$dropFile.zip -d $devOpsDir/nginx/static/$dropDir
+unzip -o drop/$dropFile.zip -d $devOpsDir/nginx/static/$dropFile
 
 command cd $devOpsDir
 if [ -d .git ]; then
