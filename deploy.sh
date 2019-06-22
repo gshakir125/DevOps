@@ -103,7 +103,7 @@ download_devops(){
     git init $dir
     command cd $dir
     git remote add -t \* -f origin $devOpsRepo  
-    git checkout master
+    git checkout -f master
     docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d
     if [ "$?" -ne 0 ]; then
       echo "Error in DevOps Up and Running !" 1>&2
