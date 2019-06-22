@@ -6,6 +6,7 @@
 !**/*.dockerignore
 !**/*.sh
 !**/*.yml
+nginx/sites-enabled/**
 nginx/static/**
 !nginx/static/html/**
 Kohsaar/**/**
