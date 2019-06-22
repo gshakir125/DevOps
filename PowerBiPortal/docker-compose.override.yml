@@ -2,7 +2,7 @@ version: '3.4'
 services:
   powerbiportal.api:
     volumes:
-      - 'C:/Users/afarooq/source/repos/PowerBiPortal.Api/wwwroot:/usr/app/wwwroot/'
+      - 'D:/repos/PowerBiPortal.Api/wwwroot:/usr/app/wwwroot/'
     environment:
       - 'ASPNETCORE_ENVIRONMENT=Sandbox'
       - 'ConnectionString=Server=mssql,1433;Database=powerbiportaldb;User Id=sa;Password=${DB_PASSWORD};MultipleActiveResultSets=true;'

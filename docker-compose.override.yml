@@ -7,6 +7,6 @@ services:
       - './nginx/static:/usr/share/nginx/'
   mssql:
     volumes:
-      - 'C:/svg2font/mssql:/var/opt/mssql'
+      - 'C:/db/mssql:/var/opt/mssql'
     environment:
       - SA_PASSWORD=P@kistan7861
