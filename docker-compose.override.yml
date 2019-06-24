@@ -8,6 +8,6 @@ services:
   mssql:
     build: mssql
     volumes:
-      - 'C:/db/mssql:/var/opt/mssql'
+      - 'C:/${ATTACH_DISK}/mssql:/var/opt/mssql'
     environment:
       - SA_PASSWORD=P@kistan7861
