@@ -128,6 +128,7 @@ check_devops_changes(){
 
          # Check if there needs an update in DevOps
          if [ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]; then
+            git reset --hard
             git pull
          else
             echo "Dev Ops is up to date"
