@@ -6,7 +6,8 @@ services:
       - './nginx/sites-enabled:/etc/nginx/sites-enabled/'
       - './nginx/static:/usr/share/nginx/'
   mssql:
+    image: mcr.microsoft.com/mssql/server:2017-CU11-ubuntu
     volumes:
-      - /${ATTACH_DISK}/db/mssql:/var/opt/mssql'
+      - /${ATTACH_DISK}/db/mssql:/var/opt/mssql
     environment:
       - SA_PASSWORD=P@kistan7861

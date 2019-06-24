@@ -6,6 +6,7 @@ services:
       - './nginx/sites-enabled:/etc/nginx/sites-enabled/'
       - './nginx/static:/usr/share/nginx/'
   mssql:
+    build: mssql
     volumes:
       - 'C:/db/mssql:/var/opt/mssql'
     environment:

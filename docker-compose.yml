@@ -16,7 +16,6 @@ services:
     container_name: mssql
     ports:
       - '1433:1433'
-    build: mssql
     restart: always 
     environment:
       - ACCEPT_EULA=Y
