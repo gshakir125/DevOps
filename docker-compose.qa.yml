@@ -1,13 +1,9 @@
 version: '3.4'
 services:
-  nginx:
-    volumes:
-      - './nginx/nginx.conf:/etc/nginx/nginx.conf'
-      - './nginx/sites-enabled:/etc/nginx/sites-enabled/'
-      - './nginx/static:/usr/share/nginx/'
   mssql:
     image: mcr.microsoft.com/mssql/server:2017-CU11-ubuntu
     volumes:
       - /${ATTACH_DISK}/db/mssql:/var/opt/mssql
-    environment:
-      - SA_PASSWORD=P@kistan7861
+  mysql:
+    volumes:
+      - /${ATTACH_DISK}/db/mysql:/var/lib/mysql'

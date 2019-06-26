@@ -105,7 +105,7 @@ download_devops(){
     command cd $dir
     git remote add -t \* -f origin $devOpsRepo  
     git checkout -f master
-    docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d
+    docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d nginx mssql
     if [ "$?" -ne 0 ]; then
       echo "Error in DevOps Up and Running !" 1>&2
       exit 1
@@ -132,7 +132,7 @@ check_devops_changes(){
             git pull
          else
             echo "Dev Ops is up to date"
-            docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d
+            docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d nginx mssql
          fi
       fi
   fi
