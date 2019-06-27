@@ -22,7 +22,7 @@ set -e
 #        password $password
 # EOF
 
-if [[ $# -lt 4 ]] ; then
+if [[ $# -lt 5 ]] ; then
     echo 'All arguments are not supplied'
     exit 1
 fi
