@@ -10,6 +10,7 @@ nginx/sites-enabled/**
 nginx/static/**
 !nginx/static/html/**
 Kohsaar/**/**
+KDevOps/**/**
 plink.exe
 
 # etc...
