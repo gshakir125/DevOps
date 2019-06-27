@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# ssh afarooq@13.75.70.241 "envariable=Value bash -s" < deploy.sh 4 arguments
+# ssh afarooq@13.75.70.241 "envariable=Value bash -s" < deploy.sh 5 arguments
 # PowerShellpl Get-Content ./deploy.sh -Raw | ssh afarooq@52.184.15.199 'bash -s'
 # cd /drives/d/repos/DevOps
 # ./plink.exe afarooq@52.184.15.199 -batch -pw P@kistan7861 "bash -s" < deploy.sh "world"
