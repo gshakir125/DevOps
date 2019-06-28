@@ -150,6 +150,7 @@ fi
 
 check_devops_changes $devOpsDir
 command cd $projectDir
+echo "docker pull $dockerRepo"
 output=$(docker pull $dockerRepo | tee /dev/stderr)
 
 if [[ $output != *"up to date"* ]]; then # Not up to date
