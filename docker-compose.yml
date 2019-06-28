@@ -27,7 +27,7 @@ services:
       - SA_PASSWORD=${DB_PASSWORD}
   mysql:
     image: mysql
-    container_name: mysql
+    container_name: mysql:8.0
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
       - MYSQL_PASSWORD=${DB_PASSWORD}
