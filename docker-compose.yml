@@ -29,8 +29,9 @@ services:
     image: mysql
     container_name: mysql
     environment:
-      - MYSQL_USER=root
+      - MYSQL_RANDOM_ROOT_PASSWORD=1
       - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_USER=root
     ports:
       - '3306:3306'
     restart: always
