@@ -29,7 +29,7 @@ services:
     image: mysql
     container_name: mysql
     environment:
-      - MYSQL_RANDOM_ROOT_PASSWORD=1
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
       - MYSQL_PASSWORD=${DB_PASSWORD}
       - MYSQL_USER=root
     ports:
