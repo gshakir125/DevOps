@@ -1,0 +1,1 @@
+# [![Build Status](https://dev.azure.com/mshakir125/ConferenceApp/_apis/build/status/ConferenceApp-Docker%20container-CI?branchName=master)](https://dev.azure.com/mshakir125/ConferenceApp/_build/latest?definitionId=2&branchName=master)
